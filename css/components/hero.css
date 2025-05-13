@@ -106,6 +106,8 @@
 .hero-slide.active {
     opacity: 1;
     visibility: visible;
+    z-index: 5;
+    display: block;
 }
 
 .slide-image {
@@ -241,6 +243,134 @@
     line-height: 0;
 }
 
+/* Versión móvil del slider */
+.mobile-slider {
+    display: none; /* Oculto por defecto, se muestra solo en móviles */
+    position: relative;
+    margin-top: 30px;
+    height: 300px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.mobile-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+}
+
+.mobile-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+}
+
+.mobile-slide-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mobile-slide-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mobile-slide-img:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+}
+
+.mobile-slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    z-index: 3;
+}
+
+.mobile-slide-category {
+    display: inline-block;
+    background: var(--secondary);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.mobile-slide-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.mobile-slide-link {
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 5px;
+    transition: var(--transition);
+}
+
+.mobile-slide-link:hover {
+    color: var(--secondary);
+}
+
+.mobile-slide-link i {
+    transition: var(--transition);
+}
+
+.mobile-slide-link:hover i {
+    transform: translateX(5px);
+}
+
+.mobile-slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+.mobile-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.mobile-dot.active {
+    background: var(--light);
+    width: 25px;
+    border-radius: 10px;
+}
+
 /* Responsive styles */
 @media (max-width: 1200px) {
     .hero h1 {
@@ -270,6 +400,8 @@
     .hero-slider-wrapper {
         max-width: 700px;
         margin: 0 auto;
+        display: block;
+        width: 100%;
     }
     
     .hero-buttons {
@@ -296,12 +428,20 @@
         font-size: 1rem;
     }
     
-    .hero-slider-wrapper {
-        height: 400px;
+    .hero > .container {
+        display: flex;
+        flex-direction: column;
     }
     
-    .slide-content h3 {
-        font-size: 1.4rem;
+    /* Ocultar slider de escritorio */
+    .desktop-slider {
+        display: none !important;
+    }
+    
+    /* Mostrar slider móvil */
+    .mobile-slider {
+        display: block;
+        margin-top: 30px;
     }
 }
 
@@ -332,32 +472,39 @@
         gap: 10px;
     }
     
-    .hero-slider-wrapper {
-        height: 350px;
+    .mobile-slider {
+        height: 300px;
+        margin: 0 -15px;
+        border-radius: 0;
+        width: calc(100% + 30px);
     }
     
-    .slide-content {
+    .mobile-slide-content {
         padding: 20px;
     }
     
-    .slide-content h3 {
+    .mobile-slide-content h3 {
         font-size: 1.2rem;
         margin-bottom: 10px;
-    }
-    
-    .hero-slider-controls {
-        bottom: 15px;
-        right: 15px;
-    }
-    
-    .hero-slider-arrow {
-        width: 36px;
-        height: 36px;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-slider-wrapper {
-        height: 300px;
+    .mobile-slider {
+        height: 250px;
+    }
+
+    .mobile-slide-content {
+        padding: 15px;
+    }
+
+    .mobile-slide-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .mobile-slide-category {
+        font-size: 0.7rem;
+        padding: 4px 12px;
     }
 } 
