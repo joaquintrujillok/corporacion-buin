@@ -122,6 +122,11 @@ img {
     height: auto;
 }
 
+/* Forzar visibilidad del hero slider en dispositivos móviles */
+@media (max-width: 768px) {
+    /* Se eliminaron los estilos forzados ya que ahora tenemos un slider específico para móviles */
+}
+
 /* Responsive global adjustments */
 @media (max-width: 1200px) {
     section {
