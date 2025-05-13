@@ -1,0 +1,278 @@
+/* Componente de noticias y barra lateral */
+
+/* Contenedor principal */
+.news-and-links {
+    padding: 40px 0 60px;
+    background-color: var(--light);
+}
+
+/* Título de sección */
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+}
+
+/* Grid de noticias */
+.news-grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+/* Columna principal de noticias */
+.news-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+/* Columna de barra lateral */
+.sidebar-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Tarjetas de noticias - Nuevo diseño */
+.news-card {
+    display: flex;
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid var(--gray-200);
+    padding: 0;
+    position: relative;
+    min-height: 120px;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-dark);
+}
+
+.news-card-img {
+    flex: 0 0 120px;
+    min-width: 120px;
+    max-width: 120px;
+    overflow: hidden;
+}
+
+.news-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.news-card:hover .news-card-img img {
+    transform: scale(1.05);
+}
+
+.news-card-content {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.news-card-title {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    transition: var(--transition);
+    line-height: 1.3;
+}
+
+.news-card:hover .news-card-title {
+    color: var(--secondary);
+}
+
+.news-card-excerpt {
+    color: var(--gray-700);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    flex-grow: 1;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-card-link {
+    color: var(--secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    align-self: flex-start;
+    transition: var(--transition);
+    margin-top: auto;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+}
+
+.news-card-link:hover {
+    border-bottom-color: var(--secondary);
+}
+
+.news-card-link i {
+    font-size: 0.7rem;
+    transition: var(--transition);
+}
+
+.news-card-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Tarjetas de barra lateral */
+.sidebar-card {
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    max-height: none;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.sidebar-card img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.sidebar-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+/* Estilo específico para la tarjeta "Déjanos tu CV" */
+.sidebar-card.dejanos-cv {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    padding: 8px;
+}
+
+.sidebar-card.dejanos-cv img {
+    border-radius: var(--border-radius-sm);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1200px) {
+    .news-card-img {
+        flex: 0 0 100px;
+        min-width: 100px;
+        max-width: 100px;
+    }
+    
+    .news-card-title {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .news-grid-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .sidebar-items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .sidebar-card {
+        max-height: none;
+        height: auto;
+    }
+    
+    .sidebar-card img {
+        max-height: 180px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .news-card-img {
+        flex: 0 0 90px;
+        min-width: 90px;
+        max-width: 90px;
+    }
+    
+    .news-card-content {
+        padding: 12px;
+    }
+    
+    .news-card-title {
+        font-size: 0.9rem;
+    }
+    
+    .sidebar-card img {
+        max-height: 150px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .news-items {
+        gap: 12px;
+    }
+    
+    .news-card-img {
+        flex: 0 0 80px;
+        min-width: 80px;
+        max-width: 80px;
+    }
+    
+    .news-card-content {
+        padding: 10px;
+    }
+    
+    .news-card-title {
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+    
+    .news-card-excerpt {
+        font-size: 0.75rem;
+        -webkit-line-clamp: 2;
+        margin-bottom: 8px;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+} 

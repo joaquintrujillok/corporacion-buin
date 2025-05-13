@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias | Corporación Municipal Buin</title>
+    
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/news-detail.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="https://www.corporacionbuin.cl/wp-content/uploads/2021/07/Logo-Corporaci%C3%B3n-2021-Horizontal.png" alt="Corporación Buin">
+                </a>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="overlay"></div>
+                <nav class="nav-links">
+                    <span class="close-menu"><i class="fas fa-times"></i></span>
+                    <a href="index.html">Inicio</a>
+                    <a href="quienes-somos.html">Quiénes Somos</a>
+                    <a href="educacion.html">Educación</a>
+                    <a href="salud.html">Salud</a>
+                    <a href="noticias.html" class="active">Noticias</a>
+                    <a href="padem-psc.html">PADEM / PSC</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Noticias y Comunicados</h1>
+                <nav class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                    <span class="current">Noticias</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Filters Section -->
+    <section class="news-filters">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="category-filter">
+                    <select name="category" id="category-select">
+                        <option value="all">Todas las categorías</option>
+                        <option value="education">Educación</option>
+                        <option value="health">Salud</option>
+                        <option value="culture">Cultura</option>
+                        <option value="sports">Deportes</option>
+                        <option value="announcements">Anuncios</option>
+                    </select>
+                </div>
+                <div class="date-filter">
+                    <select name="date" id="date-select">
+                        <option value="all">Todas las fechas</option>
+                        <option value="this-month">Este mes</option>
+                        <option value="this-year">Este año</option>
+                        <option value="last-year">Año anterior</option>
+                    </select>
+                </div>
+                <div class="search-filter">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="Buscar noticias...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main News Grid -->
+    <section class="news-grid">
+        <div class="container">
+            <div class="news-container">
+                <!-- Featured News -->
+                <div class="featured-news">
+                    <article class="news-card featured">
+                        <div class="news-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-11-at-8.54.31-PM-1-1024x721.jpeg" alt="Inauguración Centro Comunitario">
+                            <span class="news-category">Destacado</span>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date"><i class="far fa-calendar-alt"></i> 22 Noviembre 2024</span>
+                            <h2 class="news-title">Inauguración del Nuevo Centro Comunitario de Buin</h2>
+                            <p class="news-excerpt">La Corporación Municipal inauguró el nuevo Centro Comunitario de Buin, un espacio moderno diseñado para fortalecer la cohesión social y ofrecer servicios educativos y de salud a la comunidad.</p>
+                            <a href="noticia-detalle.html" class="btn btn-primary">Leer noticia completa</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- News List -->
+                <div class="news-list">
+                    <!-- News 1 -->
+                    <article class="news-card">
+                        <div class="news-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/elementor/thumbs/Banner-Educacion-ouy1u1meo016bq3rq3a7ek0ime87l3z1ibdbwyqwyg.jpg" alt="Matrículas Escolares">
+                            <span class="news-category">Educación</span>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date"><i class="far fa-calendar-alt"></i> 18 Noviembre 2024</span>
+                            <h2 class="news-title">Horarios De Matrículas Para El Año Escolar 2025</h2>
+                            <p class="news-excerpt">Del lunes 18 al viernes 29 de noviembre 2024, las familias de Buin que deseen postular a jardines infantiles, escuelas y liceos municipales podrán hacerlo en nuestros establecimientos.</p>
+                            <a href="noticia-detalle.html" class="news-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- News 2 -->
+                    <article class="news-card">
+                        <div class="news-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/11/8-1.jpg" alt="Historia De Ludana">
+                            <span class="news-category">Cultura</span>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date"><i class="far fa-calendar-alt"></i> 15 Noviembre 2024</span>
+                            <h2 class="news-title">Historia De Ludana: Una Obra Teatral Comunitaria</h2>
+                            <p class="news-excerpt">La Escuela Especial N°72 Camposano y la Universidad de Chile se unen para dar vida a la obra teatral «Ludana» donde se incorporaron elementos culturales del Alto del Carmen.</p>
+                            <a href="noticia-detalle.html" class="news-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- News 3 -->
+                    <article class="news-card">
+                        <div class="news-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-11-at-8.54.31-PM-1-1024x721.jpeg" alt="Campaña Buen Trato">
+                            <span class="news-category">Salud</span>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date"><i class="far fa-calendar-alt"></i> 12 Noviembre 2024</span>
+                            <h2 class="news-title">2ª Fase De La Campaña "Conectados Por El Buen Trato"</h2>
+                            <p class="news-excerpt">La Dirección de Salud, en conjunto con el Programa Gestión de Personas y Saludablemente Funcionarios, llevó a cabo la 2ª fase de la campaña "Conectados por el Buen Trato".</p>
+                            <a href="noticia-detalle.html" class="news-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- News 4 -->
+                    <article class="news-card">
+                        <div class="news-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/elementor/thumbs/Banner-Educacion-ouy1u1meo016bq3rq3a7ek0ime87l3z1ibdbwyqwyg.jpg" alt="Feria de Emprendimiento">
+                            <span class="news-category">Educación</span>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date"><i class="far fa-calendar-alt"></i> 9 Noviembre 2024</span>
+                            <h2 class="news-title">Feria De Emprendimiento Estudiantil 2024</h2>
+                            <p class="news-excerpt">¡Feria de Emprendimiento Estudiantil 2024! Hoy, viernes 9 de noviembre, se llevó a cabo en la Plaza de Buin, una increíble jornada de emprendimiento con la participación de estudiantes.</p>
+                            <a href="noticia-detalle.html" class="news-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- News 5 -->
+                    <article class="news-card">
+                        <div class="news-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/11/8-1.jpg" alt="Política Comercial">
+                            <span class="news-category">Educación</span>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date"><i class="far fa-calendar-alt"></i> 7 Noviembre 2024</span>
+                            <h2 class="news-title">Acercando La Política Comercial De Chile A La Juventud</h2>
+                            <p class="news-excerpt">Se realizó el evento "Acercando la Política Comercial de Chile a la juventud" en el Liceo Polivalente Los Guindos de la comuna de Buin, con gran asistencia de estudiantes.</p>
+                            <a href="noticia-detalle.html" class="news-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- News 6 -->
+                    <article class="news-card">
+                        <div class="news-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-11-at-8.54.31-PM-1-1024x721.jpeg" alt="Operativo Vecinal">
+                            <span class="news-category">Salud</span>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date"><i class="far fa-calendar-alt"></i> 5 Noviembre 2024</span>
+                            <h2 class="news-title">Operativo Vecinal En San Joaquín</h2>
+                            <p class="news-excerpt">Operativo Vecinal para todos los vecinos y vecinas de la comunidad de San Joaquín – Camino La Esperanza, la Dirección de Salud Municipal estará realizando atenciones gratuitas.</p>
+                            <a href="noticia-detalle.html" class="news-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="pagination-prev disabled"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="pagination-number active">1</a>
+                    <a href="#" class="pagination-number">2</a>
+                    <a href="#" class="pagination-number">3</a>
+                    <span class="pagination-ellipsis">...</span>
+                    <a href="#" class="pagination-number">8</a>
+                    <a href="#" class="pagination-next"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="news-sidebar">
+                <!-- Featured Categories -->
+                <div class="sidebar-widget categories-widget">
+                    <h3 class="widget-title">Categorías</h3>
+                    <ul class="category-list">
+                        <li><a href="#">Educación <span>(24)</span></a></li>
+                        <li><a href="#">Salud <span>(18)</span></a></li>
+                        <li><a href="#">Cultura <span>(12)</span></a></li>
+                        <li><a href="#">Deportes <span>(8)</span></a></li>
+                        <li><a href="#">Anuncios <span>(15)</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="sidebar-widget recent-posts-widget">
+                    <h3 class="widget-title">Publicaciones Recientes</h3>
+                    <ul class="recent-posts">
+                        <li>
+                            <a href="noticia-detalle.html">
+                                <div class="post-img">
+                                    <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-11-at-8.54.31-PM-1-1024x721.jpeg" alt="Centro Comunitario">
+                                </div>
+                                <div class="post-info">
+                                    <h4>Inauguración del Nuevo Centro Comunitario</h4>
+                                    <span>22 Noviembre 2024</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="noticia-detalle.html">
+                                <div class="post-img">
+                                    <img src="https://www.corporacionbuin.cl/wp-content/uploads/elementor/thumbs/Banner-Educacion-ouy1u1meo016bq3rq3a7ek0ime87l3z1ibdbwyqwyg.jpg" alt="Matrículas Escolares">
+                                </div>
+                                <div class="post-info">
+                                    <h4>Horarios De Matrículas Para El Año Escolar 2025</h4>
+                                    <span>18 Noviembre 2024</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="noticia-detalle.html">
+                                <div class="post-img">
+                                    <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/11/8-1.jpg" alt="Historia De Ludana">
+                                </div>
+                                <div class="post-info">
+                                    <h4>Historia De Ludana: Una Obra Teatral</h4>
+                                    <span>15 Noviembre 2024</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe Widget -->
+                <div class="sidebar-widget subscribe-widget">
+                    <h3 class="widget-title">Suscríbete</h3>
+                    <p>Recibe nuestras noticias y anuncios directamente en tu correo.</p>
+                    <form action="#" method="post" class="subscribe-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Tu correo electrónico" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Suscribirse</button>
+                    </form>
+                </div>
+
+                <!-- Tags Widget -->
+                <div class="sidebar-widget tags-widget">
+                    <h3 class="widget-title">Etiquetas</h3>
+                    <div class="tags-cloud">
+                        <a href="#" class="tag">Educación</a>
+                        <a href="#" class="tag">Salud</a>
+                        <a href="#" class="tag">Matrículas</a>
+                        <a href="#" class="tag">Cultura</a>
+                        <a href="#" class="tag">Deportes</a>
+                        <a href="#" class="tag">Servicios</a>
+                        <a href="#" class="tag">Eventos</a>
+                        <a href="#" class="tag">Comunidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-about">
+                        <a href="#" class="footer-logo">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2021/07/Logo-Corporaci%C3%B3n-2021-Horizontal.png" alt="Corporación Buin">
+                        </a>
+                        <p>Corporación Municipal de Educación y Salud de Buin, trabajando por el bienestar y desarrollo de nuestra comunidad.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                            <li><a href="educacion.html">Educación</a></li>
+                            <li><a href="salud.html">Salud</a></li>
+                            <li><a href="noticias.html">Noticias</a></li>
+                            <li><a href="padem-psc.html">PADEM / PSC</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Educación</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Liceos Municipales</a></li>
+                            <li><a href="#">Escuelas Municipales</a></li>
+                            <li><a href="#">Jardines Infantiles</a></li>
+                            <li><a href="#">Matrículas Escolares</a></li>
+                            <li><a href="#">Transporte Escolar</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Salud</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Centros de Salud</a></li>
+                            <li><a href="#">Farmacia Popular</a></li>
+                            <li><a href="#">UAPO</a></li>
+                            <li><a href="#">Central de Ambulancias</a></li>
+                            <li><a href="#">Resultados de Exámenes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col footer-contact">
+                        <h3>Contacto</h3>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt"></i> Carlos Condell 320, Buin</p>
+                            <p><i class="fas fa-phone-alt"></i> 22 352 48 10</p>
+                            <p><i class="fas fa-envelope"></i> contacto@corporacionbuin.cl</p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Corporación Municipal de Buin. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/56912345678" class="floating-button" aria-label="Whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button class="floating-button back-to-top" aria-label="Back to top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <script>
+        // Sticky Header
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Back to top button visibility
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const closeMenu = document.querySelector('.close-menu');
+        const overlay = document.querySelector('.overlay');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        overlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Back to Top
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 

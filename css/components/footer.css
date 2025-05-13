@@ -1,0 +1,228 @@
+/* Footer - Modern layout */
+.footer {
+    background-color: var(--gray-900);
+    color: var(--gray-300);
+}
+
+.footer-top {
+    padding: 80px 0 50px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.footer-about {
+    grid-column: span 2;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 50px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-about p {
+    line-height: 1.7;
+    margin-bottom: 25px;
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+    color: var(--light);
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    background-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.footer-col h3 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--light);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.footer-col h3:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+    bottom: 0;
+    left: 0;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--gray-400);
+    transition: var(--transition);
+    position: relative;
+    padding-left: 15px;
+    font-size: 0.9rem;
+}
+
+.footer-links a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--light);
+    padding-left: 20px;
+}
+
+.footer-links a:hover:before {
+    left: 8px;
+}
+
+.footer-contact address {
+    font-style: normal;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.footer-contact i {
+    margin-right: 15px;
+    margin-top: 5px;
+    color: var(--accent);
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* Floating buttons */
+.floating-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+
+.floating-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.floating-button:first-child {
+    background-color: #25d366; /* WhatsApp color */
+}
+
+.floating-button.back-to-top {
+    background-color: var(--primary);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.floating-button.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.floating-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .footer-about {
+        grid-column: span 1;
+    }
+    
+    .footer-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        padding: 60px 0 40px;
+    }
+    
+    .footer-grid {
+        gap: 25px;
+    }
+    
+    .floating-buttons {
+        right: 15px;
+        bottom: 15px;
+        gap: 10px;
+    }
+    
+    .floating-button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-about {
+        grid-column: span 1;
+    }
+} 

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporación Municipal Buin | Educación y Salud</title>
+    
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files - Cargamos los componentes individuales directamente -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/hero.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/news-grid.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+</head>
+<body>
+    <!-- Header with modern glass morphism effect -->
+    <header id="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="#" class="logo">
+                    <img src="https://www.corporacionbuin.cl/wp-content/uploads/2021/07/Logo-Corporaci%C3%B3n-2021-Horizontal.png" alt="Corporación Buin">
+                </a>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="overlay"></div>
+                <nav class="nav-links">
+                    <span class="close-menu"><i class="fas fa-times"></i></span>
+                    <a href="index.html">Inicio</a>
+                    <a href="quienes-somos.html">Quiénes Somos</a>
+                    <a href="educacion.html">Educación</a>
+                    <a href="salud.html">Salud</a>
+                    <a href="noticias.html">Noticias</a>
+                    <a href="padem-psc.html">PADEM / PSC</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">¡Bienvenidos a la Corporación Municipal de Buin!</span>
+                <h1>Consulta Resultados de Exámenes</h1>
+                <p>Accede de forma rápida y segura a los resultados de tus exámenes médicos y servicios de salud desde cualquier lugar.</p>
+                <div class="hero-buttons">
+                    <a href="http://lcgh.ddns.net:10044/" class="btn btn-primary">Ingresar Al Sistema</a>
+                    <a href="quienes-somos.html" class="btn btn-outline">Quiénes Somos</a>
+                </div>
+            </div>
+            
+            <!-- Slider de noticias -->
+            <div class="hero-slider-wrapper">
+                <div class="hero-slider">
+                    <div class="hero-slide active">
+                        <div class="slide-image">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-11-at-8.54.31-PM-1-1024x721.jpeg" alt="Comunidad de Buin">
+                        </div>
+                        <div class="slide-content">
+                            <span class="slide-category">Destacado</span>
+                            <h3>Atención de Calidad para Nuestra Comunidad</h3>
+                            <a href="noticia-detalle.html" class="slide-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-slide">
+                        <div class="slide-image">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/elementor/thumbs/Banner-Educacion-ouy1u1meo016bq3rq3a7ek0ime87l3z1ibdbwyqwyg.jpg" alt="Educación Buin">
+                        </div>
+                        <div class="slide-content">
+                            <span class="slide-category">Educación</span>
+                            <h3>Matrículas Abiertas Año Escolar 2025</h3>
+                            <a href="noticia-detalle.html" class="slide-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-slide">
+                        <div class="slide-image">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/11/8-1.jpg" alt="Salud Buin">
+                        </div>
+                        <div class="slide-content">
+                            <span class="slide-category">Salud</span>
+                            <h3>Nueva Campaña de Vacunación</h3>
+                            <a href="noticia-detalle.html" class="slide-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-slider-controls">
+                    <button class="hero-slider-arrow hero-slider-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="hero-slider-dots">
+                        <button class="hero-slider-dot active" data-slide="0"></button>
+                        <button class="hero-slider-dot" data-slide="1"></button>
+                        <button class="hero-slider-dot" data-slide="2"></button>
+                    </div>
+                    <button class="hero-slider-arrow hero-slider-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+    
+    <!-- Botones rápidos superiores -->
+    <div class="quick-buttons container">
+        <a href="#" class="quick-button text-button">
+            Ley del Lobby
+        </a>
+        <a href="#" class="quick-button text-button">
+            Ley de Transparencia
+        </a>
+        <a href="#" class="quick-button text-button">
+            Solicitud de Información
+        </a>
+    </div>
+
+    <!-- Sección de noticias y enlaces -->
+    <section class="news-and-links">
+        <div class="container">
+            <h2 class="section-title">Noticias y Comunicados</h2>
+            <div class="news-grid-container">
+                <div class="news-items">
+                    <!-- Noticia 1 -->
+                    <article class="news-card">
+                        <div class="news-card-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/elementor/thumbs/Banner-Educacion-ouy1u1meo016bq3rq3a7ek0ime87l3z1ibdbwyqwyg.jpg" alt="Horarios De Matrículas">
+                        </div>
+                        <div class="news-card-content">
+                            <h3 class="news-card-title">Horarios De Matrículas Para El Año Escolar 2025</h3>
+                            <p class="news-card-excerpt">Del lunes 18 al viernes 29 de noviembre 2024, las familias de Buin que deseen postular a jardines infantiles, escuelas y liceos municipales para sus hijos e hijas, lo pueden hacer en nuestros establecimientos.</p>
+                            <a href="noticia-detalle.html" class="news-card-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 2 -->
+                    <article class="news-card">
+                        <div class="news-card-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/11/8-1.jpg" alt="Historia De Ludana">
+                        </div>
+                        <div class="news-card-content">
+                            <h3 class="news-card-title">Historia De Ludana</h3>
+                            <p class="news-card-excerpt">La Escuela Especial N°72 Camposano y la Universidad de Chile se unen para dar vida a la obra teatral «Ludana» donde se incorporaron elementos culturales del Alto del Carmen.</p>
+                            <a href="noticia-detalle.html" class="news-card-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 3 -->
+                    <article class="news-card">
+                        <div class="news-card-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-11-at-8.54.31-PM-1-1024x721.jpeg" alt="Campaña">
+                        </div>
+                        <div class="news-card-content">
+                            <h3 class="news-card-title">2ª Fase De La Campaña "Conectados Por El Buen Trato"</h3>
+                            <p class="news-card-excerpt">La Dirección de Salud, en conjunto con el Programa Gestión de Personas y Saludablemente Funcionarios, llevó a cabo la 2ª fase de la campaña "Conectados por el Buen Trato".</p>
+                            <a href="noticia-detalle.html" class="news-card-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 4 -->
+                    <article class="news-card">
+                        <div class="news-card-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/elementor/thumbs/Banner-Educacion-ouy1u1meo016bq3rq3a7ek0ime87l3z1ibdbwyqwyg.jpg" alt="Feria de Emprendimiento">
+                        </div>
+                        <div class="news-card-content">
+                            <h3 class="news-card-title">Feria De Emprendimiento Estudiantil 2024</h3>
+                            <p class="news-card-excerpt">¡Feria de Emprendimiento Estudiantil 2024! Hoy, viernes 9 de noviembre, se llevó a cabo en la Plaza de Buin, una increíble jornada de emprendimiento.</p>
+                            <a href="noticia-detalle.html" class="news-card-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 5 -->
+                    <article class="news-card">
+                        <div class="news-card-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/11/8-1.jpg" alt="Política Comercial">
+                        </div>
+                        <div class="news-card-content">
+                            <h3 class="news-card-title">Acercando La Política Comercial De Chile A La Juventud</h3>
+                            <p class="news-card-excerpt">Se realizó el evento "Acercando la Política Comercial de Chile a la juventud" en el Liceo Polivalente Los Guindos de la comuna de Buin.</p>
+                            <a href="noticia-detalle.html" class="news-card-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 6 -->
+                    <article class="news-card">
+                        <div class="news-card-img">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-11-at-8.54.31-PM-1-1024x721.jpeg" alt="Operativo Vecinal">
+                        </div>
+                        <div class="news-card-content">
+                            <h3 class="news-card-title">Operativo Vecinal</h3>
+                            <p class="news-card-excerpt">Operativo Vecinal Para todos los vecinos y vecinas de la comunidad de San Joaquín – Camino La Esperanza, la Dirección de Salud Municipal.</p>
+                            <a href="noticia-detalle.html" class="news-card-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="sidebar-items">
+                    <!-- Enlaces laterales -->
+                    <a href="#" class="sidebar-card">
+                        <img src="img/228220132-2048x1024.png" alt="Central Ambulancias">
+                    </a>
+                    
+                    <a href="#" class="sidebar-card">
+                        <img src="img/horario-UAPO_Mesa-de-trabajo-1_Mesa-de-trabajo-1-1583x2048.jpg" alt="Horario UAPO">
+                    </a>
+                    
+                    <a href="#" class="sidebar-card">
+                        <img src="img/HORARIO-FARMACIA-POPULAR-CORREGIDO-01-1583x2048.jpg" alt="Farmacia Popular">
+                    </a>
+                    
+                    <a href="#" class="sidebar-card">
+                        <img src="img/bus-escolar-27.png" alt="Bus Escolar">
+                    </a>
+                    
+                    <a href="#" class="sidebar-card dejanos-cv">
+                        <img src="img/Déjanos-tu-CV.png" alt="Déjanos tu CV">
+                    </a>
+                    
+                    <a href="#" class="sidebar-card">
+                        <img src="img/boton.png" alt="Stop Bullying">
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="noticias.html" class="btn btn-primary">Ver todas las noticias</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-about">
+                        <a href="#" class="footer-logo">
+                            <img src="https://www.corporacionbuin.cl/wp-content/uploads/2021/07/Logo-Corporaci%C3%B3n-2021-Horizontal.png" alt="Corporación Buin">
+                        </a>
+                        <p>Corporación Municipal de Educación y Salud de Buin, trabajando por el bienestar y desarrollo de nuestra comunidad.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                            <li><a href="educacion.html">Educación</a></li>
+                            <li><a href="salud.html">Salud</a></li>
+                            <li><a href="noticias.html">Noticias</a></li>
+                            <li><a href="padem-psc.html">PADEM / PSC</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Educación</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Liceos Municipales</a></li>
+                            <li><a href="#">Escuelas Municipales</a></li>
+                            <li><a href="#">Jardines Infantiles</a></li>
+                            <li><a href="#">Matrículas Escolares</a></li>
+                            <li><a href="#">Transporte Escolar</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Salud</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Centros de Salud</a></li>
+                            <li><a href="#">Farmacia Popular</a></li>
+                            <li><a href="#">UAPO</a></li>
+                            <li><a href="#">Central de Ambulancias</a></li>
+                            <li><a href="#">Resultados de Exámenes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col footer-contact">
+                        <h3>Contacto</h3>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt"></i> Carlos Condell 320, Buin</p>
+                            <p><i class="fas fa-phone-alt"></i> 22 352 48 10</p>
+                            <p><i class="fas fa-envelope"></i> contacto@corporacionbuin.cl</p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Corporación Municipal de Buin. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botones flotantes -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/56912345678" class="floating-button" aria-label="Whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button class="floating-button back-to-top" aria-label="Back to top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <script>
+        // Código del slider
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-slider-dot');
+            const prevBtn = document.querySelector('.hero-slider-prev');
+            const nextBtn = document.querySelector('.hero-slider-next');
+            let currentIndex = 0;
+            let slideInterval;
+            
+            // Función para mostrar un slide específico
+            function showSlide(index) {
+                // Ocultar todos los slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Mostrar el slide seleccionado
+                slides[index].classList.add('active');
+                
+                // Actualizar los dots
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[index].classList.add('active');
+                
+                currentIndex = index;
+            }
+            
+            // Inicializar slider con el primer slide
+            showSlide(0);
+            
+            // Iniciar el autoplay
+            function startAutoplay() {
+                slideInterval = setInterval(() => {
+                    let nextSlide = (currentIndex + 1) % slides.length;
+                    showSlide(nextSlide);
+                }, 5000);
+            }
+            
+            // Detener el autoplay
+            function stopAutoplay() {
+                clearInterval(slideInterval);
+            }
+            
+            // Evento para el botón anterior
+            prevBtn.addEventListener('click', () => {
+                stopAutoplay();
+                let prevSlide = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(prevSlide);
+                startAutoplay();
+            });
+            
+            // Evento para el botón siguiente
+            nextBtn.addEventListener('click', () => {
+                stopAutoplay();
+                let nextSlide = (currentIndex + 1) % slides.length;
+                showSlide(nextSlide);
+                startAutoplay();
+            });
+            
+            // Eventos para los dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    stopAutoplay();
+                    showSlide(index);
+                    startAutoplay();
+                });
+            });
+            
+            // Detectar si es un dispositivo táctil
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            
+            // Configurar eventos táctiles
+            if (isTouchDevice) {
+                const sliderElement = document.querySelector('.hero-slider');
+                let touchStartX = 0;
+                let touchEndX = 0;
+                
+                sliderElement.addEventListener('touchstart', (e) => {
+                    stopAutoplay();
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+                
+                sliderElement.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                    startAutoplay();
+                }, { passive: true });
+                
+                function handleSwipe() {
+                    const swipeThreshold = 50;
+                    if (touchEndX - touchStartX > swipeThreshold) {
+                        // Deslizar a la derecha -> slide anterior
+                        let prevSlide = (currentIndex - 1 + slides.length) % slides.length;
+                        showSlide(prevSlide);
+                    } else if (touchStartX - touchEndX > swipeThreshold) {
+                        // Deslizar a la izquierda -> slide siguiente
+                        let nextSlide = (currentIndex + 1) % slides.length;
+                        showSlide(nextSlide);
+                    }
+                }
+            } else {
+                // Para dispositivos no táctiles, pausa/reanudar en hover
+                const sliderWrapper = document.querySelector('.hero-slider-wrapper');
+                
+                sliderWrapper.addEventListener('mouseenter', () => {
+                    stopAutoplay();
+                });
+                
+                sliderWrapper.addEventListener('mouseleave', () => {
+                    startAutoplay();
+                });
+            }
+            
+            // Iniciar autoplay al cargar
+            startAutoplay();
+            
+            // Reiniciar autoplay cuando la ventana vuelve a estar activa
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible') {
+                    stopAutoplay();
+                    startAutoplay();
+                } else {
+                    stopAutoplay();
+                }
+            });
+        });
+        
+        // Sticky Header
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Back to top button visibility
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const closeMenu = document.querySelector('.close-menu');
+        const overlay = document.querySelector('.overlay');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        overlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Back to Top
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
