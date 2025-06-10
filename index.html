@@ -56,8 +56,8 @@
                 </div>
             </div>
             
-            <!-- Slider de noticias -->
-            <div class="hero-slider-wrapper">
+            <!-- Slider de noticias solo para escritorio (se oculta en móviles) -->
+            <div class="hero-slider-wrapper desktop-slider">
                 <div class="hero-slider">
                     <div class="hero-slide active">
                         <div class="slide-image">
@@ -105,6 +105,52 @@
                     <button class="hero-slider-arrow hero-slider-next">
                         <i class="fas fa-chevron-right"></i>
                     </button>
+                </div>
+            </div>
+            
+            <!-- Slider de noticias para móviles (estructura simplificada) -->
+            <div class="mobile-slider">
+                <!-- Slide 1 -->
+                <div class="mobile-slide active">
+                    <div class="mobile-slide-img">
+                        <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-11-at-8.54.31-PM-1-1024x721.jpeg" alt="Comunidad de Buin">
+                        <div class="mobile-slide-content">
+                            <span class="mobile-slide-category">Destacado</span>
+                            <h3>Atención de Calidad para Nuestra Comunidad</h3>
+                            <a href="noticia-detalle.html" class="mobile-slide-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="mobile-slide">
+                    <div class="mobile-slide-img">
+                        <img src="https://www.corporacionbuin.cl/wp-content/uploads/elementor/thumbs/Banner-Educacion-ouy1u1meo016bq3rq3a7ek0ime87l3z1ibdbwyqwyg.jpg" alt="Educación Buin">
+                        <div class="mobile-slide-content">
+                            <span class="mobile-slide-category">Educación</span>
+                            <h3>Matrículas Abiertas Año Escolar 2025</h3>
+                            <a href="noticia-detalle.html" class="mobile-slide-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="mobile-slide">
+                    <div class="mobile-slide-img">
+                        <img src="https://www.corporacionbuin.cl/wp-content/uploads/2024/11/8-1.jpg" alt="Salud Buin">
+                        <div class="mobile-slide-content">
+                            <span class="mobile-slide-category">Salud</span>
+                            <h3>Nueva Campaña de Vacunación</h3>
+                            <a href="noticia-detalle.html" class="mobile-slide-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles del slider móvil -->
+                <div class="mobile-slider-dots">
+                    <button class="mobile-dot active" data-slide="0"></button>
+                    <button class="mobile-dot" data-slide="1"></button>
+                    <button class="mobile-dot" data-slide="2"></button>
                 </div>
             </div>
         </div>
@@ -314,128 +360,186 @@
     </div>
 
     <script>
-        // Código del slider
+        // Slider de escritorio
         document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.hero-slide');
-            const dots = document.querySelectorAll('.hero-slider-dot');
-            const prevBtn = document.querySelector('.hero-slider-prev');
-            const nextBtn = document.querySelector('.hero-slider-next');
-            let currentIndex = 0;
-            let slideInterval;
+            // Slider de escritorio
+            const desktopSlides = document.querySelectorAll('.hero-slide');
+            const desktopDots = document.querySelectorAll('.hero-slider-dot');
+            const desktopPrevBtn = document.querySelector('.hero-slider-prev');
+            const desktopNextBtn = document.querySelector('.hero-slider-next');
+            let desktopCurrentIndex = 0;
+            let desktopSlideInterval;
             
-            // Función para mostrar un slide específico
-            function showSlide(index) {
+            // Función para controlar desktop slides
+            function showDesktopSlide(index) {
+                // Validar índice para evitar problemas
+                if (index < 0 || index >= desktopSlides.length || !desktopSlides[index]) return;
+                
                 // Ocultar todos los slides
-                slides.forEach(slide => {
+                desktopSlides.forEach(slide => {
                     slide.classList.remove('active');
                 });
                 
                 // Mostrar el slide seleccionado
-                slides[index].classList.add('active');
+                desktopSlides[index].classList.add('active');
                 
                 // Actualizar los dots
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[index].classList.add('active');
+                desktopDots.forEach(dot => dot.classList.remove('active'));
+                desktopDots[index].classList.add('active');
                 
-                currentIndex = index;
+                desktopCurrentIndex = index;
             }
             
-            // Inicializar slider con el primer slide
-            showSlide(0);
+            // Inicializar desktop slider
+            showDesktopSlide(0);
             
-            // Iniciar el autoplay
-            function startAutoplay() {
-                slideInterval = setInterval(() => {
-                    let nextSlide = (currentIndex + 1) % slides.length;
-                    showSlide(nextSlide);
+            // Control de autoplay para desktop
+            function startDesktopAutoplay() {
+                desktopSlideInterval = setInterval(() => {
+                    let nextSlide = (desktopCurrentIndex + 1) % desktopSlides.length;
+                    showDesktopSlide(nextSlide);
                 }, 5000);
             }
             
-            // Detener el autoplay
-            function stopAutoplay() {
-                clearInterval(slideInterval);
+            function stopDesktopAutoplay() {
+                clearInterval(desktopSlideInterval);
             }
             
-            // Evento para el botón anterior
-            prevBtn.addEventListener('click', () => {
-                stopAutoplay();
-                let prevSlide = (currentIndex - 1 + slides.length) % slides.length;
-                showSlide(prevSlide);
-                startAutoplay();
+            // Botones de desktop
+            desktopPrevBtn.addEventListener('click', () => {
+                stopDesktopAutoplay();
+                let prevSlide = (desktopCurrentIndex - 1 + desktopSlides.length) % desktopSlides.length;
+                showDesktopSlide(prevSlide);
+                startDesktopAutoplay();
             });
             
-            // Evento para el botón siguiente
-            nextBtn.addEventListener('click', () => {
-                stopAutoplay();
-                let nextSlide = (currentIndex + 1) % slides.length;
-                showSlide(nextSlide);
-                startAutoplay();
+            desktopNextBtn.addEventListener('click', () => {
+                stopDesktopAutoplay();
+                let nextSlide = (desktopCurrentIndex + 1) % desktopSlides.length;
+                showDesktopSlide(nextSlide);
+                startDesktopAutoplay();
             });
             
-            // Eventos para los dots
-            dots.forEach((dot, index) => {
+            // Dots de desktop
+            desktopDots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
-                    stopAutoplay();
-                    showSlide(index);
-                    startAutoplay();
+                    stopDesktopAutoplay();
+                    showDesktopSlide(index);
+                    startDesktopAutoplay();
                 });
             });
             
-            // Detectar si es un dispositivo táctil
-            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            // Iniciar autoplay de escritorio
+            startDesktopAutoplay();
             
-            // Configurar eventos táctiles
-            if (isTouchDevice) {
-                const sliderElement = document.querySelector('.hero-slider');
+            // Pausa al hacer hover en desktop
+            const desktopSliderWrapper = document.querySelector('.desktop-slider');
+            if (desktopSliderWrapper) {
+                desktopSliderWrapper.addEventListener('mouseenter', () => {
+                    stopDesktopAutoplay();
+                });
+                
+                desktopSliderWrapper.addEventListener('mouseleave', () => {
+                    startDesktopAutoplay();
+                });
+            }
+            
+            // ----------------- SLIDER MÓVIL -------------------
+            
+            // Slider móvil
+            const mobileSlides = document.querySelectorAll('.mobile-slide');
+            const mobileDots = document.querySelectorAll('.mobile-dot');
+            let mobileCurrentIndex = 0;
+            let mobileSlideInterval;
+            
+            // Función para controlar mobile slides
+            function showMobileSlide(index) {
+                // Validar índice para evitar problemas
+                if (index < 0 || index >= mobileSlides.length || !mobileSlides[index]) return;
+                
+                // Ocultar todos los slides
+                mobileSlides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Mostrar el slide seleccionado
+                mobileSlides[index].classList.add('active');
+                
+                // Actualizar los dots
+                mobileDots.forEach(dot => dot.classList.remove('active'));
+                mobileDots[index].classList.add('active');
+                
+                mobileCurrentIndex = index;
+            }
+            
+            // Inicializar mobile slider
+            showMobileSlide(0);
+            
+            // Control de autoplay para móvil
+            function startMobileAutoplay() {
+                mobileSlideInterval = setInterval(() => {
+                    let nextSlide = (mobileCurrentIndex + 1) % mobileSlides.length;
+                    showMobileSlide(nextSlide);
+                }, 5000);
+            }
+            
+            function stopMobileAutoplay() {
+                clearInterval(mobileSlideInterval);
+            }
+            
+            // Dots de móvil
+            mobileDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    stopMobileAutoplay();
+                    showMobileSlide(index);
+                    startMobileAutoplay();
+                });
+            });
+            
+            // Iniciar autoplay móvil
+            startMobileAutoplay();
+            
+            // Configurar eventos táctiles en móvil
+            const mobileSlider = document.querySelector('.mobile-slider');
+            if (mobileSlider) {
                 let touchStartX = 0;
                 let touchEndX = 0;
                 
-                sliderElement.addEventListener('touchstart', (e) => {
-                    stopAutoplay();
+                mobileSlider.addEventListener('touchstart', (e) => {
+                    stopMobileAutoplay();
                     touchStartX = e.changedTouches[0].screenX;
                 }, { passive: true });
                 
-                sliderElement.addEventListener('touchend', (e) => {
+                mobileSlider.addEventListener('touchend', (e) => {
                     touchEndX = e.changedTouches[0].screenX;
-                    handleSwipe();
-                    startAutoplay();
+                    handleMobileSwipe();
+                    startMobileAutoplay();
                 }, { passive: true });
                 
-                function handleSwipe() {
+                function handleMobileSwipe() {
                     const swipeThreshold = 50;
                     if (touchEndX - touchStartX > swipeThreshold) {
                         // Deslizar a la derecha -> slide anterior
-                        let prevSlide = (currentIndex - 1 + slides.length) % slides.length;
-                        showSlide(prevSlide);
+                        let prevSlide = (mobileCurrentIndex - 1 + mobileSlides.length) % mobileSlides.length;
+                        showMobileSlide(prevSlide);
                     } else if (touchStartX - touchEndX > swipeThreshold) {
                         // Deslizar a la izquierda -> slide siguiente
-                        let nextSlide = (currentIndex + 1) % slides.length;
-                        showSlide(nextSlide);
+                        let nextSlide = (mobileCurrentIndex + 1) % mobileSlides.length;
+                        showMobileSlide(nextSlide);
                     }
                 }
-            } else {
-                // Para dispositivos no táctiles, pausa/reanudar en hover
-                const sliderWrapper = document.querySelector('.hero-slider-wrapper');
-                
-                sliderWrapper.addEventListener('mouseenter', () => {
-                    stopAutoplay();
-                });
-                
-                sliderWrapper.addEventListener('mouseleave', () => {
-                    startAutoplay();
-                });
             }
-            
-            // Iniciar autoplay al cargar
-            startAutoplay();
             
             // Reiniciar autoplay cuando la ventana vuelve a estar activa
             document.addEventListener('visibilitychange', () => {
                 if (document.visibilityState === 'visible') {
-                    stopAutoplay();
-                    startAutoplay();
+                    stopDesktopAutoplay();
+                    stopMobileAutoplay();
+                    startDesktopAutoplay();
+                    startMobileAutoplay();
                 } else {
-                    stopAutoplay();
+                    stopDesktopAutoplay();
+                    stopMobileAutoplay();
                 }
             });
         });
